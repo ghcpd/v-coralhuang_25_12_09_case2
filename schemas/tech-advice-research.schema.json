@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Tech Advice / Research (Volunteer / Quid Pro Quo — Small Businesses Only)",
+  "type": "object",
+  "required": ["isSmallBusiness", "projectName", "platformTechnology", "payment", "projectContext", "timeline"],
+  "properties": {
+    "isSmallBusiness": {
+      "type": "boolean",
+      "const": true,
+      "description": "Must be true — this form is for small businesses only"
+    },
+    "projectName": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Project name (required)"
+    },
+    "platformTechnology": {
+      "type": "string",
+      "enum": ["Archer", "AWS Cloud", "Windows Desktop", "Web Application", "Database", "SAI360"],
+      "description": "Platform Technology (required)"
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["JavaScript", "PHP", ".NET", "Python", "SQL"]
+      },
+      "uniqueItems": true,
+      "description": "Optional: multiple selection"
+    },
+    "payment": {
+      "type": "string",
+      "enum": ["Volunteer", "Quid Pro Quo"],
+      "description": "Payment type (required)"
+    },
+    "codebase": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["React", "Node", "Flask", "Laravel", "FastAPI", "VuesticUI"]
+      },
+      "uniqueItems": true,
+      "description": "Optional: multiple selection"
+    },
+    "projectContext": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Describe the project and the need (required)"
+    },
+    "timeline": {
+      "type": "string",
+      "enum": ["1 month", "2 month", "3 month", "5 month", "8 month", "13 month"],
+      "description": "Timeline to complete the project (required)"
+    },
+    "teamSize": {
+      "type": "integer",
+      "enum": [0, 1, 2, 3, 5, 8],
+      "description": "IT team size (optional)"
+    }
+  },
+  "additionalProperties": false
+}
