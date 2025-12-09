@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tech Advice / Research Submission</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    label { display:block; margin: .75rem 0; }
+    fieldset { margin: .5rem 0; }
+    .notice { background:#fff3cd; border:1px solid #ffeeba; padding:10px; }
+  </style>
+</head>
+<body>
+  <h1>Tech Advice / Research</h1>
+  <p class="notice">Note: This form is intended for small businesses requesting volunteer or quid pro quo projects.</p>
+
+  <form id="tech-advice-form">
+    <label>Project Name* <input name="projectName" required /></label>
+
+    <label>Platform Technology*
+      <select name="platformTechnology" required>
+        <option value="">Select...</option>
+        <option>Archer</option>
+        <option>AWS Cloud</option>
+        <option>Windows Desktop</option>
+        <option>Web Application</option>
+        <option>Database</option>
+        <option>SAI360</option>
+      </select>
+    </label>
+
+    <fieldset>
+      <legend>Languages (optional)</legend>
+      <label><input type="checkbox" value="JavaScript" name="languages"/> JavaScript</label>
+      <label><input type="checkbox" value="PHP" name="languages"/> PHP</label>
+      <label><input type="checkbox" value=".NET" name="languages"/> .NET</label>
+      <label><input type="checkbox" value="Python" name="languages"/> Python</label>
+      <label><input type="checkbox" value="SQL" name="languages"/> SQL</label>
+    </fieldset>
+
+    <label>Payment*
+      <select name="payment" required>
+        <option value="">Select...</option>
+        <option>Volunteer</option>
+        <option>Quid Pro Quo</option>
+      </select>
+    </label>
+
+    <fieldset>
+      <legend>Codebase (optional)</legend>
+      <label><input type="checkbox" name="codebase" value="React"/> React</label>
+      <label><input type="checkbox" name="codebase" value="Node"/> Node</label>
+      <label><input type="checkbox" name="codebase" value="Flask"/> Flask</label>
+      <label><input type="checkbox" name="codebase" value="Laravel"/> Laravel</label>
+      <label><input type="checkbox" name="codebase" value="FastAPI"/> FastAPI</label>
+      <label><input type="checkbox" name="codebase" value="VuesticUI"/> VuesticUI</label>
+    </fieldset>
+
+    <label>Timeline*
+      <select name="timelineMonths" required>
+        <option value="">Select...</option>
+        <option value="1">1 month</option>
+        <option value="2">2 months</option>
+        <option value="3">3 months</option>
+        <option value="5">5 months</option>
+        <option value="8">8 months</option>
+        <option value="13">13 months</option>
+      </select>
+    </label>
+
+    <label>IT team size*
+      <select name="itTeamSize" required>
+        <option value="">Select...</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="8">8</option>
+      </select>
+    </label>
+
+    <label>Project Need* <textarea name="projectNeed" required minlength="10"></textarea></label>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('tech-advice-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const payload = {
+        projectName: data.get('projectName'),
+        platformTechnology: data.get('platformTechnology'),
+        languages: data.getAll('languages'),
+        payment: data.get('payment'),
+        codebase: data.getAll('codebase'),
+        timelineMonths: parseInt(data.get('timelineMonths'), 10),
+        itTeamSize: parseInt(data.get('itTeamSize'), 10),
+        projectNeed: data.get('projectNeed')
+      };
+      console.log('Form submit payload', payload);
+      alert('Form ready — see console for payload');
+    });
+  </script>
+</body>
+</html>
