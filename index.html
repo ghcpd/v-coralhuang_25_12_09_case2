@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Advise / Research</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { max-width: 600px; margin: auto; }
+        label { display: block; margin-top: 10px; }
+        select, input, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+        .required { color: red; }
+        button { margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Tech Advise / Research</h1>
+    <p>This form is intended for volunteer or quid pro quo projects, and only for small businesses.</p>
+    <form id="techForm">
+        <label for="platform">Platform Technology <span class="required">*</span></label>
+        <select id="platform" name="platform" required>
+            <option value="">Select Platform</option>
+            <option value="Archer">Archer</option>
+            <option value="AWS Cloud">AWS Cloud</option>
+            <option value="Windows Desktop">Windows Desktop</option>
+            <option value="Web Application">Web Application</option>
+            <option value="Database">Database</option>
+            <option value="SAI360">SAI360</option>
+        </select>
+
+        <label for="languages">Languages (Multiple Selection)</label>
+        <select id="languages" name="languages" multiple>
+            <option value="JavaScript">JavaScript</option>
+            <option value="PHP">PHP</option>
+            <option value=".NET">.NET</option>
+            <option value="Python">Python</option>
+            <option value="SQL">SQL</option>
+        </select>
+
+        <label for="payment">Payment <span class="required">*</span></label>
+        <select id="payment" name="payment" required>
+            <option value="">Select Payment</option>
+            <option value="Volunteer">Volunteer</option>
+            <option value="Quid Pro Quo">Quid Pro Quo</option>
+        </select>
+
+        <label for="codebase">Codebase (Multiple Selection)</label>
+        <select id="codebase" name="codebase" multiple>
+            <option value="React">React</option>
+            <option value="Node">Node</option>
+            <option value="Flask">Flask</option>
+            <option value="Laravel">Laravel</option>
+            <option value="FastAPI">FastAPI</option>
+            <option value="VuesticUI">VuesticUI</option>
+        </select>
+
+        <h2>Project Context</h2>
+        <label for="projectName">Project Name <span class="required">*</span></label>
+        <input type="text" id="projectName" name="projectName" required>
+
+        <label for="timeline">Timeline to complete the project</label>
+        <select id="timeline" name="timeline">
+            <option value="">Select Timeline</option>
+            <option value="1 month">1 month</option>
+            <option value="2 months">2 months</option>
+            <option value="3 months">3 months</option>
+            <option value="5 months">5 months</option>
+            <option value="8 months">8 months</option>
+            <option value="13 months">13 months</option>
+        </select>
+
+        <label for="teamSize">IT team size</label>
+        <select id="teamSize" name="teamSize">
+            <option value="">Select Team Size</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="8">8</option>
+        </select>
+
+        <label for="need">Document the need</label>
+        <textarea id="need" name="need" rows="4"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('techForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Simple validation and alert
+            const formData = new FormData(this);
+            let data = {};
+            for (let [key, value] of formData.entries()) {
+                if (data[key]) {
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
+                    }
+                } else {
+                    data[key] = value;
+                }
+            }
+            console.log(data);
+            alert('Form submitted! Check console for data.');
+        });
+    </script>
+</body>
+</html>
