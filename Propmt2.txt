@@ -1,20 +1,23 @@
-"messageid": "b4db39bb-880b-5f4a-aeed-c4ad570e73bd"
+"messageid": "1b6b4e7c-a827-5eec-a210-2f3d219db985"
 
-Create a Product class with attributes (name, price, stock), and methods to check stock and update stock, including detailed docstrings and type hints.”
-
-Code:
-
-Copilot should generate the complete Product class
-
-class Product:
-def init(self, name, price, stock):
-# Initialize product attributes
-pass
-
-def is_in_stock(self):  
-    # Check if product is available  
-    pass  
-
-def update_stock(self, quantity):  
-    # Update product stock  
-    pass
+You are a university registrar checking the new course catalog for errors. You are given a list of
+N courses (numbered 0 to N-1) and a list of M prerequisite requirements. A requirement u v
+means "course u must be taken before course v".
+A "prerequisite paradox" exists if there is a circular dependency (e.g., Course A needs B, B
+needs C, and C needs A). Your task is to determine if the course catalog contains any such
+paradoxes.
+Input Format:
+● The first line: Two integers, N (number of courses) and M (number of requirements).
+● The next M lines: Two integers u and v per line.
+Output Format:
+● Print PARADOX if a cycle is detected.
+● Print VALID if no cycles exist.
+Sample Test Case:
+Input:
+4 4
+0 1
+1 2
+2 3
+3 1
+Output:
+PARADOX make a c program for this
