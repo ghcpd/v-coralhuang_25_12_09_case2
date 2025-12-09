@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tech Advise / Research — Small Business Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Tech Advise / Research — Small Business</h1>
+        <p class="muted">Volunteer or Quid Pro Quo projects only. Fields marked * are required.</p>
+      </header>
+
+      <form id="tech-form" novalidate>
+        <section class="card">
+          <h2>Project context</h2>
+
+          <label for="project-name">Project name *</label>
+          <input id="project-name" name="projectName" type="text" required />
+
+          <label for="timeline">Timeline to complete *</label>
+          <select id="timeline" name="timeline" required>
+            <option value="">— choose timeline —</option>
+            <option>1 month</option>
+            <option>2 month</option>
+            <option>3 month</option>
+            <option>5 month</option>
+            <option>8 month</option>
+            <option>13 month</option>
+          </select>
+
+          <label for="team-size">IT team size</label>
+          <select id="team-size" name="teamSize">
+            <option value="">— choose team size —</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>5</option>
+            <option>8</option>
+          </select>
+
+          <label for="need">Describe the need *</label>
+          <textarea id="need" name="need" rows="5" required placeholder="Describe the project's goal, constraints, and what you need help with"></textarea>
+        </section>
+
+        <section class="card">
+          <h2>Technology / Scope</h2>
+
+          <label for="platform">Platform Technology *</label>
+          <select id="platform" name="platform" required>
+            <option value="">— choose platform —</option>
+            <option>Archer</option>
+            <option>AWS Cloud</option>
+            <option>Windows Desktop</option>
+            <option>Web Application</option>
+            <option>Database</option>
+            <option>SAI360</option>
+          </select>
+
+          <fieldset>
+            <legend>Languages (optional)</legend>
+            <label><input type="checkbox" name="languages" value="JavaScript" /> JavaScript</label>
+            <label><input type="checkbox" name="languages" value="PHP" /> PHP</label>
+            <label><input type="checkbox" name="languages" value=".NET" /> .NET</label>
+            <label><input type="checkbox" name="languages" value="Python" /> Python</label>
+            <label><input type="checkbox" name="languages" value="SQL" /> SQL</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Codebase(s) (optional)</legend>
+            <label><input type="checkbox" name="codebase" value="React" /> React</label>
+            <label><input type="checkbox" name="codebase" value="Node" /> Node</label>
+            <label><input type="checkbox" name="codebase" value="Flask" /> Flask</label>
+            <label><input type="checkbox" name="codebase" value="Laravel" /> Laravel</label>
+            <label><input type="checkbox" name="codebase" value="FastAPI" /> FastAPI</label>
+            <label><input type="checkbox" name="codebase" value="VuesticUI" /> VuesticUI</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Payment / arrangement *</legend>
+            <label><input type="radio" name="payment" value="Volunteer" required /> Volunteer</label>
+            <label><input type="radio" name="payment" value="Quid Pro Quo" /> Quid Pro Quo</label>
+          </fieldset>
+        </section>
+
+        <div class="form-actions">
+          <button type="submit">Submit</button>
+          <button type="reset" class="btn-muted">Reset</button>
+        </div>
+
+        <div id="errors" role="alert" aria-live="polite"></div>
+      </form>
+
+      <section id="result" class="card hidden">
+        <h2>Submission preview</h2>
+        <pre id="json-output" aria-live="polite"></pre>
+        <button id="close-result">Close preview</button>
+      </section>
+
+      <footer class="muted">Only intended for small-business volunteer or quid-pro-quo projects.</footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
