@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Tech Advice / Research Submission",
+  "type": "object",
+  "properties": {
+    "projectName": { "type": "string", "minLength": 1 },
+    "platformTechnology": {
+      "type": "string",
+      "enum": ["Archer", "AWS Cloud", "Windows Desktop", "Web Application", "Database", "SAI360"]
+    },
+    "languages": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["JavaScript", "PHP", ".NET", "Python", "SQL"] },
+      "uniqueItems": true
+    },
+    "payment": { "type": "string", "enum": ["Volunteer", "Quid Pro Quo"] },
+    "codebase": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["React", "Node", "Flask", "Laravel", "FastAPI", "VuesticUI"] },
+      "uniqueItems": true
+    },
+    "timelineMonths": { "type": "integer", "enum": [1, 2, 3, 5, 8, 13] },
+    "itTeamSize": { "type": "integer", "enum": [0, 1, 2, 3, 5, 8] },
+    "projectNeed": { "type": "string", "minLength": 10 }
+  },
+  "required": ["projectName", "platformTechnology", "payment", "timelineMonths", "itTeamSize", "projectNeed"],
+  "additionalProperties": false
+}
