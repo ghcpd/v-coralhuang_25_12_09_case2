@@ -1,0 +1,32 @@
+centifictest: "messageid": "d85b79a8-5b0d-5d74-bc41-fb2fe0bfa6fe"
+
+Now for the last item and its intended for volunteer or quid pro quo projects. And only for small businesses
+
+"Tech Advise / Research"
+Platform Technology is a dropdown:
+Archer, AWS Cloud, Windows Desktop, Web Application, Database, or SAI360
+
+Languages is a multiple selection option:
+JavaScript, PHP, .NET, Python, or SQL
+Payment: Volunteer or Quid Pro Quo
+Codebase is multiple selection:
+React, Node, Flask, Laravel, FastAPI, VuesticUI
+
+Project Context Section will need be need to list of the follwoing fields
+Project Name - which is required
+Timeline to complete the project: dropdown:
+1 month, 2 month, 3 month, 5 month, 8 month, 13 month.
+IT team size:
+0, 1, 2, 3, 5, 8
+needs a textarea to document the need
+
+use your best judgement on which fields you field should be required
+
+
+GitHub Copilot: Created [](file:///c%3A/Bug_Bash/25_12_09/v-coralhuang_25_12_09_case2/index.html)
+
+I've created a simple HTML form based on the specifications in Propmt2.txt. The form includes all the required fields with appropriate input types (dropdowns for single/multiple selections, text input, and textarea). I've marked "Platform Technology" and "Project Name" as required fields, and "Payment" as required based on the context of volunteer/quid pro quo projects.
+
+You can open index.html in a web browser to view and test the form. It includes basic JavaScript for form submission (which logs the data to the console and shows an alert for demonstration purposes). If you need additional features like backend integration, validation enhancements, or styling improvements, let me know!
+
+Made changes.
