@@ -1,0 +1,53 @@
+User: "messageid": "d85b79a8-5b0d-5d74-bc41-fb2fe0bfa6fe"
+
+Now for the last item and its intended for volunteer or quid pro quo projects. And only for small businesses
+
+"Tech Advise / Research"
+Platform Technology is a dropdown:
+Archer, AWS Cloud, Windows Desktop, Web Application, Database, or SAI360
+
+Languages is a multiple selection option:
+JavaScript, PHP, .NET, Python, or SQL
+Payment: Volunteer or Quid Pro Quo
+Codebase is multiple selection:
+React, Node, Flask, Laravel, FastAPI, VuesticUI
+
+Project Context Section will need be need to list of the follwoing fields
+Project Name - which is required
+Timeline to complete the project: dropdown:
+1 month, 2 month, 3 month, 5 month, 8 month, 13 month.
+IT team size:
+0, 1, 2, 3, 5, 8
+needs a textarea to document the need
+
+use your best judgement on which fields you field should be required
+
+
+GitHub Copilot: Thanks — I fixed typos and drafted a concise form spec and required-field recommendations. Do you want this as a JSON Schema, plain HTML form, or a React component (and if React, plain or using a UI lib)?
+
+Suggested form (fields, types, required):
+- Form title: "Tech Advise / Research" (for volunteer / quid pro quo projects — small businesses only)
+- Eligibility: "Is this a small business?" (checkbox or implicit validation) — required
+- Project Name (string, text input) — required
+- Platform Technology (dropdown) — options: Archer, AWS Cloud, Windows Desktop, Web Application, Database, SAI360 — required
+- Languages (multi-select) — options: JavaScript, PHP, .NET, Python, SQL — optional
+- Payment (radio/dropdown) — options: Volunteer, Quid Pro Quo — required
+- Codebase (multi-select) — options: React, Node, Flask, Laravel, FastAPI, VuesticUI — optional
+- Project Context / Need (textarea) — prompt: "Describe the project and need" — required
+- Timeline (dropdown) — options: 1 month, 2 month, 3 month, 5 month, 8 month, 13 month — required
+- IT team size (dropdown) — options: 0, 1, 2, 3, 5, 8 — optional
+- Submit button and client-side validation (ensure small-business eligibility; required fields filled)
+
+If that matches your intent I can implement it now (create JSON Schema and an HTML form + simple validation, or a React component). Which format do you want me to add to the repo?
+
+User: choose the way u think is best
+
+GitHub Copilot: Creating a JSON Schema and a simple HTML form with client-side validation; next step: add both files to the repo.
+
+Created [](file:///c%3A/Bug_Bash/25_12_09/v-coralhuang_25_12_09_case2/schemas/tech-advice-research.schema.json)
+
+Created [](file:///c%3A/Bug_Bash/25_12_09/v-coralhuang_25_12_09_case2/forms/tech-advice-form.html)
+
+Done — I added a JSON Schema and a simple HTML form with client-side validation. Would you like a React component or automated tests next?
+
+Made changes.

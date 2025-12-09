@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tech Advice / Research — Small Business</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width:700px; margin:2rem auto; }
+    label { display:block; margin-top:0.75rem; }
+    input[type=text], textarea, select { width:100%; padding:0.5rem; box-sizing:border-box; }
+    .row { display:flex; gap:1rem; }
+    .row > * { flex:1 }
+    button { margin-top:1rem; padding:0.6rem 1rem }
+    pre { background:#f6f7f8; padding:1rem; white-space:pre-wrap }
+  </style>
+</head>
+<body>
+  <h1>Tech Advice / Research (Volunteer / Quid Pro Quo)</h1>
+  <form id="techForm">
+    <label><input type="checkbox" id="isSmallBusiness"> This is a small business (required)</label>
+
+    <label for="projectName">Project Name *</label>
+    <input type="text" id="projectName" name="projectName" required>
+
+    <label for="platformTechnology">Platform Technology *</label>
+    <select id="platformTechnology" name="platformTechnology" required>
+      <option value="">-- select --</option>
+      <option>Archer</option>
+      <option>AWS Cloud</option>
+      <option>Windows Desktop</option>
+      <option>Web Application</option>
+      <option>Database</option>
+      <option>SAI360</option>
+    </select>
+
+    <label for="languages">Languages (multiple selection)</label>
+    <select id="languages" name="languages" multiple size="5">
+      <option>JavaScript</option>
+      <option>PHP</option>
+      <option>.NET</option>
+      <option>Python</option>
+      <option>SQL</option>
+    </select>
+
+    <label>Payment *</label>
+    <div class="row">
+      <label><input type="radio" name="payment" value="Volunteer" required> Volunteer</label>
+      <label><input type="radio" name="payment" value="Quid Pro Quo" required> Quid Pro Quo</label>
+    </div>
+
+    <label for="codebase">Codebase (multiple selection)</label>
+    <select id="codebase" name="codebase" multiple size="6">
+      <option>React</option>
+      <option>Node</option>
+      <option>Flask</option>
+      <option>Laravel</option>
+      <option>FastAPI</option>
+      <option>VuesticUI</option>
+    </select>
+
+    <label for="projectContext">Project Context / Need *</label>
+    <textarea id="projectContext" name="projectContext" rows="5" required></textarea>
+
+    <label for="timeline">Timeline *</label>
+    <select id="timeline" name="timeline" required>
+      <option value="">-- select --</option>
+      <option>1 month</option>
+      <option>2 month</option>
+      <option>3 month</option>
+      <option>5 month</option>
+      <option>8 month</option>
+      <option>13 month</option>
+    </select>
+
+    <label for="teamSize">IT team size</label>
+    <select id="teamSize" name="teamSize">
+      <option value="">-- select --</option>
+      <option>0</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>5</option>
+      <option>8</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2>Form JSON Preview</h2>
+  <pre id="output">(submit to see JSON)</pre>
+
+  <script>
+    function getSelectedOptions(selectElem) {
+      return Array.from(selectElem.selectedOptions).map(o => o.value);
+    }
+
+    document.getElementById('techForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const isSmall = document.getElementById('isSmallBusiness').checked;
+      if (!isSmall) {
+        alert('This form is for small businesses only. Please check the box to confirm eligibility.');
+        return;
+      }
+
+      const data = {
+        isSmallBusiness: isSmall,
+        projectName: document.getElementById('projectName').value.trim(),
+        platformTechnology: document.getElementById('platformTechnology').value,
+        languages: getSelectedOptions(document.getElementById('languages')),
+        payment: (document.querySelector('input[name=payment]:checked') || {}).value || null,
+        codebase: getSelectedOptions(document.getElementById('codebase')),
+        projectContext: document.getElementById('projectContext').value.trim(),
+        timeline: document.getElementById('timeline').value,
+        teamSize: document.getElementById('teamSize').value === '' ? null : parseInt(document.getElementById('teamSize').value, 10)
+      };
+
+      // Basic client-side validation for required fields (in addition to HTML required)
+      const required = ['projectName','platformTechnology','payment','projectContext','timeline'];
+      for (const key of required) {
+        if (!data[key] || (Array.isArray(data[key]) && data[key].length === 0)) {
+          alert('Please complete all required fields.');
+          return;
+        }
+      }
+
+      // Show JSON preview
+      document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+
+      // Normally here you would POST the `data` JSON to your server
+    });
+  </script>
+</body>
+</html>
