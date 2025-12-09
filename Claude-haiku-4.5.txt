@@ -1,0 +1,104 @@
+820234338: "messageid": "d85b79a8-5b0d-5d74-bc41-fb2fe0bfa6fe"
+
+Now for the last item and its intended for volunteer or quid pro quo projects. And only for small businesses
+
+"Tech Advise / Research"
+Platform Technology is a dropdown:
+Archer, AWS Cloud, Windows Desktop, Web Application, Database, or SAI360
+
+Languages is a multiple selection option:
+JavaScript, PHP, .NET, Python, or SQL
+Payment: Volunteer or Quid Pro Quo
+Codebase is multiple selection:
+React, Node, Flask, Laravel, FastAPI, VuesticUI
+
+Project Context Section will need be need to list of the follwoing fields
+Project Name - which is required
+Timeline to complete the project: dropdown:
+1 month, 2 month, 3 month, 5 month, 8 month, 13 month.
+IT team size:
+0, 1, 2, 3, 5, 8
+needs a textarea to document the need
+
+use your best judgement on which fields you field should be required
+
+
+GitHub Copilot: I can see this is a specification for a form related to "Tech Advise / Research" projects. However, I need clarification on what you'd like me to do:
+
+1. **Create a form** based on this specification (HTML, React, or another framework)?
+2. **Convert this to a structured format** (JSON schema, database schema, etc.)?
+3. **Build a full application** with this form?
+4. **Something else** with this specification?
+
+Could you let me know what you'd like me to build or implement?
+
+820234338: Create a form based on this specification (HTML, React, or another framework
+
+GitHub Copilot: I'll create a React form based on the specification. Let me first check the workspace structure to understand the project setup. 
+
+Read [](file:///c%3A/Bug_Bash/25_12_09/v-coralhuang_25_12_09_case2)
+
+The workspace only has a git repo and a text file. I'll create a complete React form component for the "Tech Advise / Research" form based on your specification. 
+
+Created [](file:///c%3A/Bug_Bash/25_12_09/v-coralhuang_25_12_09_case2/TechAdviseForm.jsx)
+
+Now I'll create the accompanying CSS file for styling: 
+
+Created [](file:///c%3A/Bug_Bash/25_12_09/v-coralhuang_25_12_09_case2/TechAdviseForm.css)
+
+Now I'll create an example App component and package.json to show how to use the form: 
+
+Created [](file:///c%3A/Bug_Bash/25_12_09/v-coralhuang_25_12_09_case2/App.jsx)
+
+Created [](file:///c%3A/Bug_Bash/25_12_09/v-coralhuang_25_12_09_case2/App.css)
+
+Created [](file:///c%3A/Bug_Bash/25_12_09/v-coralhuang_25_12_09_case2/package.json)
+
+Created [](file:///c%3A/Bug_Bash/25_12_09/v-coralhuang_25_12_09_case2/index.jsx)
+
+Created [](file:///c%3A/Bug_Bash/25_12_09/v-coralhuang_25_12_09_case2/public/index.html)
+
+Finally, I'll create a README with setup and usage instructions: 
+
+Created [](file:///c%3A/Bug_Bash/25_12_09/v-coralhuang_25_12_09_case2/README.md)
+
+Done! I've created a complete React form based on your specification. Here's what I built:
+
+## Created Files:
+
+1. **TechAdviseForm.jsx** - Main form component with:
+   - All dropdowns (Platform Technology, Payment, Timeline, IT Team Size)
+   - Multiple selection checkboxes (Languages, Codebase)
+   - Project Context section with required fields
+   - Form validation with error messages
+   - Submit and Reset functionality
+
+2. **TechAdviseForm.css** - Professional styling with:
+   - Clean, modern design
+   - Responsive layout
+   - Focus and error states
+   - Mobile-friendly
+
+3. **Supporting files**:
+   - App.jsx / App.css
+   - index.jsx
+   - index.html
+   - package.json
+   - README.md with full documentation
+
+## Required Fields:
+- Project Name
+- Platform Technology
+- Payment
+- Timeline
+- IT Team Size
+- Project Needs
+
+## To use:
+1. Run `npm install`
+2. Run `npm start`
+3. Open http://localhost:3000
+
+The form validates all required fields before submission and displays clear error messages.
+
+Made changes.
