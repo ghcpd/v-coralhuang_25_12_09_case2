@@ -1,23 +1,7 @@
-"messageid": "1b6b4e7c-a827-5eec-a210-2f3d219db985"
+"messageid": "282dd07e-b79f-53bf-a120-ba526ff14fbe"
 
-You are a university registrar checking the new course catalog for errors. You are given a list of
-N courses (numbered 0 to N-1) and a list of M prerequisite requirements. A requirement u v
-means "course u must be taken before course v".
-A "prerequisite paradox" exists if there is a circular dependency (e.g., Course A needs B, B
-needs C, and C needs A). Your task is to determine if the course catalog contains any such
-paradoxes.
-Input Format:
-● The first line: Two integers, N (number of courses) and M (number of requirements).
-● The next M lines: Two integers u and v per line.
-Output Format:
-● Print PARADOX if a cycle is detected.
-● Print VALID if no cycles exist.
-Sample Test Case:
-Input:
-4 4
-0 1
-1 2
-2 3
-3 1
-Output:
-PARADOX make a c program for this
+It looks good, please make a filter tables for listing bookings.
+show name, email address, phone number, date, interval.
+put into the last column the delete button for cancel the booking.
+If user confirm the process call bookingcanel URL with booking id parameter.
+above the table, you can filter by the following fields: day, interval, name, email address and phone number
