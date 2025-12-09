@@ -1,21 +1,20 @@
-"messageid": "9b59b97b-be91-5023-858f-9ba40a4a0980"
+"messageid": "b4db39bb-880b-5f4a-aeed-c4ad570e73bd"
 
-now, i need you to configure results.html page.
-The page should have a dropdown which holds values from 1950 to 2025 but can only display 5 consequent values at a time. However the landing page should show values only from 2021 to 2025 allowing user to scroll back till 1950.
-the api used are
-https://api.jolpi.ca/ergast/f1/
-<<year>>.json
-and
-https://api.jolpi.ca/ergast/f1/
-<<year>>/<<round>>/results.json
-where the value <<year>> should correspond to the value of year selected in the drop down.
-Once a year is selected the page should display all the races in the year using the API: 'https://api.jolpi.ca/ergast/f1/
-<<year>>.json'.
-for example, if year 2017 is selected in the drop down, the page should list all races below the drop down for the year 2017 using the API:
-'https://api.jolpi.ca/ergast/f1/2017.json
-'
-You can get the total number of rounds that season by reading the value for 'total' in the json file. For 2017, the value is "total":"23", the total number of rounds that year is 23. So on selecting 2017, create a table with 23 rows each listing the corresponding round.
-Now when the user hits a round, the results for that round should be displayed by using the API: 'https://api.jolpi.ca/ergast/f1/
-<<year>>/<<round>>/results.json'
-where <<year>> is the corresponding year selected for that race and <<round>> is the value of "round" specified in the API 'https://api.jolpi.ca/ergast/f1/
-<<year>>.json' for that particular year.
+Create a Product class with attributes (name, price, stock), and methods to check stock and update stock, including detailed docstrings and type hints.”
+
+Code:
+
+Copilot should generate the complete Product class
+
+class Product:
+def init(self, name, price, stock):
+# Initialize product attributes
+pass
+
+def is_in_stock(self):  
+    # Check if product is available  
+    pass  
+
+def update_stock(self, quantity):  
+    # Update product stock  
+    pass
