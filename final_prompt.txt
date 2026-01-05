@@ -1,0 +1,23 @@
+"messageid": "d85b79a8-5b0d-5d74-bc41-fb2fe0bfa6fe"
+
+Now for the last item and its intended for volunteer or quid pro quo projects. And only for small businesses
+
+"Tech Advise / Research"
+Platform Technology is a dropdown:
+Archer, AWS Cloud, Windows Desktop, Web Application, Database, or SAI360
+
+Languages is a multiple selection option:
+JavaScript, PHP, .NET, Python, or SQL
+Payment: Volunteer or Quid Pro Quo
+Codebase is multiple selection:
+React, Node, Flask, Laravel, FastAPI, VuesticUI
+
+Project Context Section will need be need to list of the follwoing fields
+Project Name - which is required
+Timeline to complete the project: dropdown:
+1 month, 2 month, 3 month, 5 month, 8 month, 13 month.
+IT team size:
+0, 1, 2, 3, 5, 8
+needs a textarea to document the need
+
+use your best judgement on which fields you field should be required
